@@ -1,0 +1,126 @@
+Q: What is Selenium WebDriver:
+A:
+    WebDriver is one of the component in selenium.
+    WebDriver is a java interface which has many implementation classes like ChromeDriver, FirefoxDriver, EdgeDriver etc.
+    WebDriver is an API(Application Programming Interface) which is used to automate the web application for testing purposes.
+
+    WebDriver (I)
+            RemoteWebDriver (C)
+                    ChromeDriver (C)
+                    FirefoxDriver (C)
+                    EdgeDriver (C)
+                    SafariDriver (C)
+                    OperaDriver (C)
+                    HtmlUnitDriver (C)
+                    PhantomJSDriver (C)
+            TakesScreenshot (I)
+            JavaScriptExecutor (I)
+            HasCapabilities (I)
+            Interactive (I)
+
+Q: How WebDriver is interacted with the browser?
+A: Selenium WebDriver interacts with browser using browser-specific driver executables like ChromeDriver or GeckoDriver.
+   WebDriver sends commands through W3C WebDriver protocol, the driver translates them into browser actions,
+   browser executes them and sends response back to Selenium.
+
+Q: Why we create a Maven Project for Selenium WebDriver?
+A: Apache maven is a build and project management tool used mainly for java projects
+    	i. Manages project build (compile, test, package)
+    	ii. Handles dependencies automatically
+    	iii. Uses a standard project structure
+    	iv. Integrates well with selenium, TestNG, Jenkins
+
+Q: Different types of methods used in Selenium WebDriver?
+
+    1. Browser Control Methods
+        i. get(String url): Opens the specified URL in the browser.
+        ii. getTitle(): Retrieves the title of the current page.
+        iii. getCurrentUrl(): Retrieves the URL of the current page.
+        iv. getPageSource(): Retrieves the HTML source code of the current page.
+        v. close(): Closes the current browser window.
+        vi. quit(): Closes all browser windows and ends the WebDriver session.
+
+    2. Navigation Methods: Used with --> driver.navigate()
+        i. to(String url): Navigates to the specified URL.
+        ii. back(): Navigates back to the previous page.
+        iii. forward(): Navigates forward to the next page.
+        iv. refresh(): Refreshes the current page.
+
+    3. Window Management Methods: Used with --> driver.manage().window()
+        i. maximize(): Maximizes the browser window.
+        ii. minimize(): Minimizes the browser window.
+        iii. fullscreen(): Makes the browser window full screen.
+        iv. setSize(Dimension targetSize): Sets the size of the browser window to the specified dimensions.
+        v. getSize(): Retrieves the current size of the browser window.
+        vi. setPosition(Point targetPosition): Sets the position of the browser window to the specified coordinates.
+        vii. getPosition(): Retrieves the current position of the browser window.
+
+    4. Timeouts Methods: Used with --> driver.manage().timeouts()
+        i. implicitlyWait(Duration time): Sets the implicit wait timeout for finding elements.
+        ii. pageLoadTimeout(Duration time): Sets the timeout for page loading.
+        iii. scriptTimeout(Duration time): Sets the timeout for asynchronous scripts.
+
+    5. Element Finding Methods: Used with --> driver.findElement() or driver.findElements()
+        i. findElement(By by): Finds the first web element using the specified locator strategy (e.g., By.id, By.name, By.xpath).
+        ii. findElements(By by): Finds all web elements matching the specified locator strategy and returns a list of WebElements.
+
+    6. Frame Methods: Used with --> driver.switchTo().frame()
+        i. frame(int index): Switches to the frame by its index.
+        ii. frame(String nameOrId): Switches to the frame by its name or ID.
+        iii. frame(WebElement frameElement): Switches to the frame using a WebElement reference
+        iv. defaultContent(): Switches back to the main document from a frame.
+        v. parentFrame(): Switches to the parent frame of the current frame.
+
+    7. Alert Methods: Used with --> driver.switchTo().alert()
+        i. accept(): Accepts the alert (clicks OK).
+        ii. dismiss(): Dismisses the alert (clicks Cancel).
+        iii. getText(): Retrieves the text from the alert.
+        iv. sendKeys(String keysToSend): Sends text to the alert's input field (if present).
+
+    8. Window Handling Methods: Used with --> driver.getWindowHandle() and driver.getWindowHandles()
+        i. getWindowHandle(): Retrieves the unique identifier of the current browser window, allowing you to switch back to it later if needed.
+        ii. getWindowHandles(): Retrieves a set of unique identifiers for all open browser windows, allowing you to switch between them.
+
+    9. Cookie Management Methods: Used with --> driver.manage()
+        i. addCookie(Cookie cookie): Adds a cookie to the current domain.
+        ii. getCookies(): Retrieves all cookies for the current domain as a Set of Cookie objects.
+        iii. deleteCookie(Cookie cookie): Deletes a specific cookie by passing a Cookie object.
+        iv. deleteCookieNamed(String name): Deletes a cookie by its name.
+        v. deleteAllCookies(): Deletes all cookies for the current domain.
+
+    10. Screenshot Methods: Used with --> TakesScreenshot interface
+        i. getScreenshotAs(OutputType<T> target): Captures a screenshot of the current browser window and returns it in the specified output type (e.g., OutputType.FILE, OutputType.BASE64).
+            Eg: TakesScreenshot ts = (TakesScreenshot) driver;
+                File src = ts.getScreenshotAs(OutputType.FILE);
+
+    11. JavaScriptExecutor Methods: Used with --> JavaScriptExecutor interface
+        i. executeScript(String script, Object... args): Executes the specified JavaScript code in the context of the current page and returns the result.
+        ii. executeAsyncScript(String script, Object... args): Executes asynchronous JavaScript code in the context of the current page and returns the result once the script has completed.
+
+    12. Wait Methods: Used with --> WebDriverWait and ExpectedConditions
+        i. WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+           wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("elementId")));
+        ii. WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+            wait.until(ExpectedConditions.elementToBeClickable(By.id("elementId")));
+
+Q: Selenium WebDriver Architecture:
+A: Selenium WebDriver follows a client-server architecture.
+   The WebDriver client translates the commands from your script into HTTP requests following the W3C WebDriver protocol.
+   These Http requests are sent to the browser-specific driver (e.g., ChromeDriver), which acts as a server.
+   Finally the browser drivers interpret the http request and control the actual browsers, carrying out the actions.
+   The browser executes the commands and returns the response to the driver, which is relayed back to the WebDriver client.
+
+   Q: Why W3c WebDriver protocol?
+   A: The W3C WebDriver protocol is a standardized way for WebDriver clients to communicate with browser drivers,
+       ensuring compatibility across different browsers and programming languages.
+
+   Q: What is browser driver?
+   A: A browser driver is a separate executable that WebDriver uses to control a specific browser.
+      Each browser has its own driver that implements the WebDriver protocol to translate commands from the client into actions performed by the browser.
+
+
+
+
+
+
+
