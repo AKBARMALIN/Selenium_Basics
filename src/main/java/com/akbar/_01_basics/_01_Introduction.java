@@ -1,4 +1,4 @@
-/*
+package com.akbar._01_basics;/*
     1. Launch the browser and open the URL https://www.google.com/
     2. Verify the title of the page is "Google"
     3. Close the browser

@@ -118,6 +118,183 @@ A: Selenium WebDriver follows a client-server architecture.
    A: A browser driver is a separate executable that WebDriver uses to control a specific browser.
       Each browser has its own driver that implements the WebDriver protocol to translate commands from the client into actions performed by the browser.
 
+# Program 1
+/*
+    1. Launch the browser and open the URL https://www.google.com/
+    2. Verify the title of the page is "Google"
+    3. Close the browser
+ */
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class com.akbar._01_basics._01_Introduction {
+
+    public static void main(String[] args) {
+
+        // Step 1: Launch the browser and open the URL https://www.google.com/
+        WebDriver driver = new ChromeDriver();
+        // WebDriver driver = new FirefoxDriver(); // For Firefox
+        // WebDriver driver = new EdgeDriver(); // For Edge
+
+        driver.get("https://www.google.com/");
+
+        // Step 2: Verify the title of the page is "Google"
+        String expectedTitle = "Google";
+
+        // Retrieve the actual title from the opened page
+        String actualTitle = driver.getTitle();
+
+        // Compare expected vs actual and print the result.
+        // equals() is used for exact match. If you want case-insensitive comparison, use equalsIgnoreCase().
+        if (actualTitle.equals(expectedTitle)) {
+            System.out.println("Title verification passed!");
+        } else {
+            System.out.println("Title verification failed! Expected: " + expectedTitle + ", but got: " + actualTitle);
+        }
+
+        // Step 3: Close the browser
+        // quit() closes all browser windows and safely ends the session.
+        driver.quit();
+    }
+}
+
+Q: What is locator in Selenium WebDriver?
+A: A locator in Selenium is used to identify and find web elements on a webpage so automation scripts can interact with them.
+
+  For example, Selenium uses locators to:
+        Click a button
+        Enter text into a textbox
+        Select a dropdown value
+        Read text from a page
+
+  Types:
+    1. ID: Locates an element by its unique ID attribute.
+    2. Name: Locates an element by its name attribute.
+    3. Class Name: Locates elements by their class attribute.
+    4. Tag Name: Locates elements by their HTML tag name.
+    5. Link Text: Locates a link element by its exact text.
+    6. Partial Link Text: Locates a link element by partial text match.
+    7. CSS Selector: Locates elements using CSS syntax.
+    8. XPath: Locates elements using XML path expressions.
+
+Q: What is WebElement in Selenium WebDriver?
+A: A WebElement in Selenium represents a single HTML element present on a webpage.
+   After locating an element using a locator, Selenium stores that element inside a WebElement object so we can perform actions on it.
+
+   Common Methods of WebElement:
+    i. click(): Clicks on the element.
+    ii. sendKeys(String keysToSend): Types the specified text into the element (e.g., input fields).
+    iii. getText(): Retrieves the visible text of the element.
+    iv. clear(): Clears the text from an input field.
+    v. isDisplayed(): Checks if the element is visible on the page.
+    vi. isEnabled(): Checks if the element is enabled and can be interacted with.
+    vii. isSelected(): Checks if the element (e.g., checkbox or radio button) is selected.
+    viii. getAttribute(String name): Retrieves the value of a specified attribute of the element.
+
+Q: What is the difference between findElement() and findElements() methods in Selenium WebDriver?
+A:
+findElement():
+     findElement() is used to locate a single web element on the page.
+     It returns the first matching element as a WebElement object. If no element is found, it throws a NoSuchElementException.
+
+findElements():
+     findElements() is used to locate multiple web elements on the page.
+     It returns a List of WebElement objects that match the specified locator. If no elements are found,
+         it returns an empty list instead of throwing an exception.
+
+Q: Different ways to identify the locator using CSS Selector?
+A: CSS Selector is a powerful way to locate elements using CSS syntax. Here are different ways to identify locators using CSS Selector:
+    i. By ID: #idValue
+    ii. By Class: .className
+    iii. By Tag: tagName
+    iv. By Attribute: [attributeName='value']
+    v. By Attribute Contains: [attributeName*='value']
+    vi. By Attribute Starts With: [attributeName^='value']
+    vii. By Attribute Ends With: [attributeName$='value']
+    viii. By Multiple Classes: .class1.class2
+    ix. By Descendant: parent child
+    x. By Child: parent > child
+    xi. By Sibling: element1 + element2 (adjacent sibling), element1 ~ element2 (general sibling)
+    xii. By Pseudo-classes: :first-child, :last
+
+Q: What is Xpath in Selenium WebDriver?
+A: XPath (XML Path Language) is a locator strategy used in Selenium to identify and navigate elements in an HTML document.
+   It helps Selenium find web elements on a webpage when attributes like id or name are not available or are dynamic.
+
+Q: What are the different tyepes of Xpath in Selenium WebDriver?
+    i. Absolute XPath: It starts from the root of the HTML document and follows a specific path to the target element.
+       It is not recommended for use as it is brittle and can break easily if there are any changes in the HTML structure.
+                Example: /html/body/div[1]/div[2]/div[1]/h1
+       Starts from the root element (/html)
+       Uses complete path of the element
+       Very lengthy
+       Breaks easily if UI structure changes
+
+       Disadvantages
+        i. Not reliable
+        ii. Hard to maintain
+        iii. Any UI change can break it
+
+    ii. Relative XPath: It starts from any element in the document and can be more flexible and robust than absolute XPath.
+       It is recommended for use in Selenium.
+                Example: //h1[@id='header']
+       Starts with //
+       Searches element anywhere in DOM
+       More flexible and commonly used
+
+       Advantages
+        i Easy to write
+        ii. More stable
+        iii. Preferred in Selenium automation
+
+        >> Absolute xpath starts with /. it represents root node.
+        >> Relative xpath starts with //. it represents searching anywhere in the DOM.
+
+        >> Absolute xpath do not use attributes.
+        >> Relative xpath uses attributes to locate elements.
+
+        >> Absolute xpath traverse through each node till it reaches the target element.
+        >> Relative xpath directly locates the target element using attributes without traversing through each node.
+
+        Syntax:
+        //tagname[@attribute='value']
+
+Q: Explain about the Xpath Axes in Selenium WebDriver?
+A: XPath axes allow you to navigate the DOM tree relative to a known element. Common axes include:
+        i. parent: Selects the parent of the current node.
+        //Eg: //input[@id='txtUsername']/parent::form
+
+        ii. child: Selects the children of the current node.
+        Eg: //div[@id='divUsername']/child::input
+        Note: In practice / is used instead of child:: from the known Xpath.
+
+        iii. ancestor: Selects all ancestors (parent, grandparent, etc.) of the current node.
+        Eg //input[@name='txtUsername']/ancestor::form
+
+        iv. descendant: Selects all descendants (children, grandchildren, etc.) of the current node.
+        Eg: //form[@id='frmLogin']/descendant::input
+
+        v. following: Selects everything in the document after the closing tag of the current node.
+           // Eg: //input[@id='txtUsername']/following::input
+
+           // - preceding: Selects everything in the document before the opening tag of the current node.
+           // Eg: //span[text()='Password']/preceding::input
+
+           // - following-sibling: Selects all siblings after the current node.
+           // Eg: //input[@id='txtUsername']/following-sibling::span
+
+           // - preceding-sibling: Selects all siblings before the current node.
+           // Eg: //span[contains(text(), 'Username')]/preceding-sibling::input
+
+           Some conditional xpaths:
+           i. //span[text()>100]
+           ii. //span[text()<100]
+           iii. //span[text()>=100]
+           iv. //span[text()<=100]
+           v. //span[text()!=100]
+
+Q: What are the get methods we have in Selenium WebDriver?
+A:
 
 
 
