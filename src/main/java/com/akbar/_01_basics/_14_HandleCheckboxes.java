@@ -49,6 +49,33 @@ public class _14_HandleCheckboxes {
             }
         }
 
+        for(int i = 0; i < chkboxList.size(); i++) {
+            if(i == 1 || i == 3 || i == 6) {
+                if(!chkboxList.get(i).isSelected()) {
+                    chkboxList.get(i).click();
+                }
+            }
+        }
+
+        String weekDay = "Monday";
+        switch(weekDay) {
+            case "Sunday" : driver.findElement(By.xpath("//input[@id='sunday']")).click();
+                            break;
+            case "Monday" : driver.findElement(By.xpath("//input[@id='monday']")).click();
+                            break;
+            case "Tuesday" : driver.findElement(By.xpath("//input[@id='tuesday']")).click();
+                             break;
+            case "Wednesday" : driver.findElement(By.xpath("//input[@id='wednesday']")).click();
+                               break;
+            case "Thursday" : driver.findElement(By.xpath("//input[@id='thursday']")).click();
+                              break;
+            case "Friday" : driver.findElement(By.xpath("//input[@id='friday']")).click();
+                            break;
+            case "Saturday" : driver.findElement(By.xpath("//input[@id='saturday']")).click();
+                              break;
+            default : System.out.println("Invalid week day: " + weekDay);
+        }
+
         driver.quit();
     }
 }

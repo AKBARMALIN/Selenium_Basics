@@ -17,7 +17,7 @@ import org.openqa.selenium.edge.EdgeDriver;
 import java.util.List;
 import java.util.Set;
 
-public class _01_Assignment_1 {
+public class _01_Assignment {
 
     public static void main(String[] args) {
 
