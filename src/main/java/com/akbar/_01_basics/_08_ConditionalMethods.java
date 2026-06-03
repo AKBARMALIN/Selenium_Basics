@@ -9,17 +9,6 @@ import java.time.Duration;
 
 /**
  * This class demonstrates the use of Conditional Methods in Selenium WebDriver.
- *
- * Conditional methods are used to check the state or condition of web elements.
- * They return boolean values (true/false) based on whether the condition is met.
- *
- * Common conditional methods include:
- * 1. isDisplayed() - Checks if an element is visible on the page
- * 2. isEnabled() - Checks if an element is enabled and interactive
- * 3. isSelected() - Checks if an element (checkbox/radio button) is selected
- *
- * These methods are essential for writing robust test cases, as they help verify
- * the state of elements before interacting with them.
  */
 
 public class _08_ConditionalMethods {

@@ -10,12 +10,6 @@ import java.util.Set;
 
 /**
  * This class demonstrates how to handle multiple windows/tabs in Selenium WebDriver.
- * It shows two approaches to work with window handles:
- * 1. Using ArrayList to access specific windows by index
- * 2. Using enhanced for-loop to iterate through all windows
- *
- * Window handles are unique identifiers for each open window/tab in the browser.
- * This is useful when a web page opens new windows or tabs (e.g., clicking links that open in new tabs).
  */
 
 public class _07_GetWindowHandles {

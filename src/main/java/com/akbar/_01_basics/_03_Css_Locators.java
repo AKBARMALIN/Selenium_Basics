@@ -7,11 +7,6 @@ import org.openqa.selenium.edge.EdgeDriver;
 
 /**
  * Demonstrates locating elements using CSS selectors on the nopCommerce demo site.
- *
- * Notes:
- * - This is a simple demo/main-class style program. For robust test code, use a test framework,
- *   explicit waits, and proper setup/teardown (try/finally or JUnit/TestNG lifecycle methods).
- * - Requires a matching EdgeDriver binary available to the runtime (on PATH or managed).
  */
 public class _03_Css_Locators {
 

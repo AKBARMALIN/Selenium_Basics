@@ -8,14 +8,6 @@ import org.openqa.selenium.edge.EdgeDriver;
 import java.util.List;
 /**
  * Demonstrates basic usage of different WebElement locator strategies in Selenium.
- * This simple standalone main method:
- *  - starts an Edge browser,
- *  - navigates to a practice page,
- *  - demonstrates sendKeys, isDisplayed, findElements for various tags,
- *  - clicks links using partial and full link text,
- *  - then quits the browser.
- *
- * Note: This is a demo program — for real test suites, use setup/teardown, waits, and proper exception handling.
  */
 public class _02_Locators {
 
