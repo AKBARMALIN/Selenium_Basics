@@ -7,33 +7,7 @@ import org.openqa.selenium.edge.EdgeDriver;
 import java.time.Duration;
 
 /**
- * Demonstrates handling of Authentication Alerts (HTTP Basic Authentication)
- * using Selenium WebDriver.
- *
- * Scenario:
- * 1. Launch the browser.
- * 2. Open a website protected by HTTP Basic Authentication.
- * 3. Pass username and password directly in the URL.
- * 4. Verify that authentication is successful.
- * 5. Compare the displayed message with the expected message.
- * 6. Print the test result.
- *
- * Authentication Alert:
- * An Authentication Alert (Basic Authentication) is a browser-level
- * security popup that requests a username and password before granting
- * access to a webpage.
- *
- * URL Syntax:
- * https://username:password@website-url
- *
- * Example:
- * https://admin:admin@the-internet.herokuapp.com/basic_auth
- *
- * Concepts Covered:
- * - Basic Authentication
- * - Browser URL credentials
- * - Text validation
- * - Conditional verification
+ * Demonstrates handling of Authentication Alerts (HTTP Basic Authentication) using Selenium WebDriver.
  */
 public class _18_AuthenticateAlerts {
 

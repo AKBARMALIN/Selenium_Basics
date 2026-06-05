@@ -9,16 +9,6 @@ import java.util.List;
 
 /**
  * Demonstrates handling of an Auto-Suggestive Dropdown using Selenium WebDriver.
- *
- * Scenario:
- * 1. Launch Google website.
- * 2. Enter "Selenium" in the search box.
- * 3. Capture all suggestions displayed in the auto-suggestive dropdown.
- * 4. Print all available suggestions.
- * 5. Select the matching option ("selenium") from the dropdown.
- *
- * Auto-Suggestive Dropdown:
- * A dropdown whose options appear dynamically while typing in an input field.
  */
 public class _23_DropDown_Autosuggestive {
 

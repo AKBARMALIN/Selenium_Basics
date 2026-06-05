@@ -9,8 +9,7 @@ import org.openqa.selenium.edge.EdgeDriver;
 import java.util.List;
 
 /**
- * Demonstrates handling of a Bootstrap Multi-Select Dropdown
- * using Selenium WebDriver.
+ * Demonstrates handling of a Bootstrap Multi-Select Dropdown using Selenium WebDriver.
  */
 public class _21_DropDown_Boostrap {
 

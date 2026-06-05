@@ -10,29 +10,6 @@ import org.openqa.selenium.support.ui.Select;
 import java.util.List;
 /**
  * Demonstrates handling of a Static Dropdown using Selenium WebDriver.
- *
- * Scenario:
- * 1. Launch the browser and open the Test Automation Practice website.
- * 2. Locate the Country dropdown.
- * 3. Select dropdown options using:
- *    - Visible Text
- *    - Value
- *    - Index
- * 4. Retrieve all dropdown options.
- * 5. Print the total number of options.
- * 6. Print each option available in the dropdown.
- *
- * Static Dropdown:
- * A dropdown whose options are predefined in the HTML page
- * and can be handled using Selenium's Select class.
- *
- * Concepts Covered:
- * - Select class
- * - selectByVisibleText()
- * - selectByValue()
- * - selectByIndex()
- * - getOptions()
- * - Iterating through dropdown options
  */
 public class _20_DropDown_Static {
 

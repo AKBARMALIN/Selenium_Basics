@@ -9,31 +9,6 @@ import java.time.Duration;
 
 /**
  * Demonstrates handling of Frames and Nested Frames using Selenium WebDriver.
- *
- * Scenario:
- * 1. Launch the browser and open the UI Vision Frames demo page.
- * 2. Switch to Frame 1 and enter text.
- * 3. Return to the main page.
- * 4. Switch to Frame 2 and enter text.
- * 5. Return to the main page.
- * 6. Switch to Frame 3 and enter text.
- * 7. Switch to the nested (inner) frame inside Frame 3.
- * 8. Select a radio button option within the nested frame.
- *
- * Frames:
- * A frame is an HTML document embedded inside another HTML document.
- * Selenium cannot directly interact with elements inside a frame until
- * the driver switches its focus to that frame.
- *
- * Nested Frame:
- * A frame that exists inside another frame.
- *
- * Concepts Covered:
- * - switchTo().frame(WebElement)
- * - switchTo().frame(index)
- * - switchTo().defaultContent()
- * - Handling multiple frames
- * - Handling nested frames
  */
 public class _19_Frames {
 
