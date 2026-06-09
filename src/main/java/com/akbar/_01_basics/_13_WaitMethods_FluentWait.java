@@ -11,24 +11,38 @@ import org.openqa.selenium.support.ui.Wait;
 
 import java.time.Duration;
 
+/**
+ * Demonstrates the use of Fluent Wait in Selenium WebDriver.
+ */
 public class _13_WaitMethods_FluentWait {
 
     public static void main(String[] args) {
 
+        // Create Edge browser instance
         WebDriver driver = new EdgeDriver();
 
+        // Configure Fluent Wait
         Wait<WebDriver> wait = new FluentWait<>(driver)
+                // Maximum time to wait
                 .withTimeout(Duration.ofSeconds(5))
+                        // Check condition every 2 seconds
                         .pollingEvery(Duration.ofSeconds(2))
+                                // Ignore NoSuchElementException while waiting
                                 .ignoring(NoSuchElementException.class);
 
+        // Maximize browser window
         driver.manage().window().maximize();
 
+        // Open OrangeHRM application
         driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
 
+        // Wait until username field becomes visible
         WebElement usernameField = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@name='username']")));
+
+        // Enter username
         usernameField.sendKeys("Admin");
 
+        // Close browser and terminate WebDriver session
         driver.quit();
     }
 }

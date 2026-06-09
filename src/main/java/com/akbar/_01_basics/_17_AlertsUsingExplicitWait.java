@@ -11,8 +11,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 /**
- * Demonstrates handling JavaScript Alerts using Explicit Wait
- * in Selenium WebDriver.
+ * Demonstrates handling JavaScript Alerts using Explicit Wait in Selenium WebDriver.
  */
 public class _17_AlertsUsingExplicitWait {
 
